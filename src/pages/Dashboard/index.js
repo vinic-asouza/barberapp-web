@@ -2,8 +2,8 @@ import React from 'react';
 
 // import { Container } from './styles';
 
-export default function Repository() {
+export default function Dashboard() {
   return (
-    <h1>Repository</h1>
+    <h1>Dashboard</h1>
   );
 }
