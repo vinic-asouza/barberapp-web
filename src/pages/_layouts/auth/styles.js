@@ -16,8 +16,7 @@ export const Content = styled.div`
 
   h1 {
     margin-top: 15px;
-    color: #FFF;
-    
+    color: #fff;
   }
 
   form {
@@ -39,12 +38,19 @@ export const Content = styled.div`
       }
     }
 
+    span {
+      color: #f64c75;
+      align-self: flex-start;
+      margin: 0 0 10px;
+      font-weight: bold;
+    }
+
     button {
       margin: 5px 0 0;
       height: 44px;
       background: #3b9eff;
       font-weight: bold;
-      color: #FFF;
+      color: #fff;
       border: 0;
       border-radius: 4px;
       font-size: 16px;
@@ -56,7 +62,7 @@ export const Content = styled.div`
     }
 
     a {
-      color: #FFF;
+      color: #fff;
       margin-top: 15px;
       font-size: 16px;
       opacity: 0.8;
@@ -67,4 +73,3 @@ export const Content = styled.div`
     }
   }
 `;
-
