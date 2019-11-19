@@ -12,7 +12,7 @@ const schema = Yup.object().shape({
   email: Yup.string()
     .email('Esse email ta meio estranho, não acha?')
     .required('Ei, precisamos saber quem é você!'),
-  password: Yup.string().required('Não podemos adivinhar sua senha, né!?'),
+  password: Yup.string().required('Fica tranquilo, não vamos falar sua senha para ninguém'),
 });
 
 export default function SignIn() {
