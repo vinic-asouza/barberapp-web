@@ -6,9 +6,7 @@ import { Wrapper, Content } from './styles';
 export default function AuthLayout({ children }) {
   return (
     <Wrapper>
-      <Content>
-        {children}
-      </Content>
+      <Content>{children}</Content>
     </Wrapper>
   );
 }

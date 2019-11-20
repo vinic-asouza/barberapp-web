@@ -12,7 +12,9 @@ const schema = Yup.object().shape({
   email: Yup.string()
     .email('Esse email ta meio estranho, não acha?')
     .required('Ei, precisamos saber quem é você!'),
-  password: Yup.string().required('Fica tranquilo, não vamos falar sua senha para ninguém'),
+  password: Yup.string().required(
+    'Fica tranquilo, não vamos falar sua senha para ninguém'
+  ),
 });
 
 export default function SignIn() {
@@ -32,7 +34,7 @@ export default function SignIn() {
         <Input name="email" type="email" placeholder="Email" />
         <Input name="password" type="password" placeholder="Senha" />
 
-        <button type="submit">{ loading ? 'Carregando...' : 'Acessar' }</button>
+        <button type="submit">{loading ? 'Carregando...' : 'Acessar'}</button>
         <Link to="/register">Registrar-se</Link>
       </Form>
     </>

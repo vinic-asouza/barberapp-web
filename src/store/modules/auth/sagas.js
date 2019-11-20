@@ -43,7 +43,6 @@ export function* signUp({ payload }) {
     });
 
     history.push('/');
-
   } catch (err) {
     toast.error('Falha no cadastro, verifique seus dados');
 
@@ -53,5 +52,5 @@ export function* signUp({ payload }) {
 
 export default all([
   takeLatest('@auth/SIGN_IN_REQUEST', signIn),
-  takeLatest('@auth/SIGN_UP_REQUEST', signUp)
+  takeLatest('@auth/SIGN_UP_REQUEST', signUp),
 ]);
