@@ -5,7 +5,13 @@ import pt from 'date-fns/locale/pt';
 
 import api from '~/services/api';
 
-import { Container, Badge, NotificationList, Notification, Scroll } from './styles';
+import {
+  Container,
+  Badge,
+  NotificationList,
+  Notification,
+  Scroll,
+} from './styles';
 
 export default function Notifications() {
   const [visible, setVisible] = useState(false);
@@ -14,7 +20,7 @@ export default function Notifications() {
   const hasUnread = useMemo(
     () => !!notifications.find(notification => notification.read === false),
     [notifications]
-  )
+  );
 
   useEffect(() => {
     async function loadNotifications() {
@@ -26,17 +32,17 @@ export default function Notifications() {
           parseISO(notification.createdAt),
           new Date(),
           { addSuffix: true, locale: pt }
-        )
-      }))
+        ),
+      }));
 
       setNotifications(data);
     }
 
     loadNotifications();
-  }, [])
+  }, []);
 
   function handleToggleVisible() {
-    setVisible(!visible)
+    setVisible(!visible);
   }
 
   async function handleMarkAsRead(id) {
@@ -52,7 +58,7 @@ export default function Notifications() {
   return (
     <Container>
       <Badge onClick={handleToggleVisible} hasUnread={hasUnread}>
-        <MdNotifications color="#7159c1" size={20} />
+        <MdNotifications color="#ff6347" size={20} />
       </Badge>
       <NotificationList visible={visible}>
         <Scroll>
@@ -60,8 +66,13 @@ export default function Notifications() {
             <Notification key={notification._id} unread={!notification.read}>
               <p>{notification.content}</p>
               <time>{notification.timeDistance}</time>
-              { !notification.read &&  (
-                <button type="button" onClick={() => handleMarkAsRead(notification._id)}>Marcar como lida</button>
+              {!notification.read && (
+                <button
+                  type="button"
+                  onClick={() => handleMarkAsRead(notification._id)}
+                >
+                  Marcar como lida
+                </button>
               )}
             </Notification>
           ))}

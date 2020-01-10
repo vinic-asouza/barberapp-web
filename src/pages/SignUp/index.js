@@ -24,14 +24,15 @@ const schema = Yup.object().shape({
 export default function SignUp() {
   const dispatch = useDispatch();
 
-  function handleSubmit({name, email, password}) {
+  function handleSubmit({ name, email, password }) {
     dispatch(signUpRequest(name, email, password));
   }
 
   return (
     <>
       <img src={logo} alt="GoBarber" />
-      <h1>GoBarber</h1>
+      <h1>BarberApp</h1>
+      <h3>Agenda Online</h3>
 
       <Form schema={schema} onSubmit={handleSubmit}>
         <Input name="name" placeholder="Nome Completo" />

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   height: 64px;
   padding: 0 30px;
-  background: #FFF;
+  background: #fff;
 `;
 
 export const Content = styled.div`
@@ -26,7 +26,7 @@ export const Content = styled.div`
 
     a {
       font-weight: bold;
-      color: #7159c1;
+      color: #333;
     }
   }
 
@@ -60,8 +60,8 @@ export const Profile = styled.div`
   }
 
   img {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-    }
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
 `;

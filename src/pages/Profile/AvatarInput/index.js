@@ -5,7 +5,7 @@ import api from '~/services/api';
 import { Container } from './styles';
 
 export default function AvatarInput() {
-  const { defaultValue, registerField } = useField('avatar')
+  const { defaultValue, registerField } = useField('avatar');
 
   const [file, setFile] = useState(defaultValue && defaultValue.id);
   const [preview, setPreview] = useState(defaultValue && defaultValue.url);
@@ -18,11 +18,11 @@ export default function AvatarInput() {
         name: 'avatar_id',
         ref: ref.current,
         path: 'dataset.file',
-      })
+      });
     }
   }, [ref, registerField]);
 
-  async function handleChange(e){
+  async function handleChange(e) {
     const data = new FormData();
 
     data.append('file', e.target.files[0]);
@@ -38,9 +38,20 @@ export default function AvatarInput() {
   return (
     <Container>
       <label htmlFor="avatar">
-        <img src={preview || 'https://api.adorable.io/avatars/50/abott@adorable.png'} alt="Avatar"/>
+        <img
+          src={
+            preview || 'https://api.adorable.io/avatars/250/abott@adorable.png'
+          }
+          alt="Avatar"
+        />
 
-        <input type="file" id="avatar" accept="image/*" onChange={handleChange} data-file={file}/>
+        <input
+          type="file"
+          id="avatar"
+          accept="image/*"
+          onChange={handleChange}
+          data-file={file}
+        />
       </label>
     </Container>
   );
